@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Navigation Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-right: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        /* Dropdown Menu */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        nav ul li ul li a {
+            padding: 0.5rem 1rem;
+            white-space: nowrap;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #488410;
+            color: #fff;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li:hover > a {
+            background-color: #e71414;
+            color: #fff;
+        }
+
+        /* Additional Features */
+        nav ul li ul li {
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li ul li:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul li a::after {
+            content: '\25BC';
+            margin-left: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        nav ul li ul li a::after {
+            content: '';
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            nav ul li ul {
+                position: static;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="alert('Welcome to Home!')">Home</a>
+                <ul>
+                    <li><a href="#" onclick="alert('Subsection of Home!')">Subsection 1</a></li>
+                    <li><a href="#" onclick="alert('Another section of Home!')">Subsection 2</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="alert('Learn more About us!')">About</a>
+                <ul>
+                    <li><a href="#" onclick="alert('Our History!')">Our History</a></li>
+                    <li><a href="#" onclick="alert('Our Team!')">Our Team</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="alert('Explore our Services!')">Services</a>
+                <ul>
+                    <li><a href="#" onclick="alert('Web Design Services!')">Web Design</a></li>
+                    <li><a href="#" onclick="alert('SEO Services!')">SEO Services</a></li>
+                    <li><a href="#" onclick="alert('Marketing Services!')">Marketing</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="alert('Contact us for more information!')">Contact</a>
+                <ul>
+                    <li><a href="#" onclick="alert('Email Us!')">Email Us</a></li>
+                    <li><a href="#" onclick="alert('Call Us!')">Call Us</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
